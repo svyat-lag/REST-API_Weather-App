@@ -24,6 +24,7 @@ public class Measurement {
     @Column(name = "raining")
     private Boolean raining;
 
+//    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "sensor", referencedColumnName = "id")
     private Sensor sensor;

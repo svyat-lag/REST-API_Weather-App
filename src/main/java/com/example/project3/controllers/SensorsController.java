@@ -31,6 +31,11 @@ public class SensorsController {
         this.sensorValidator = sensorValidator;
     }
 
+    @GetMapping
+    public List<Sensor> findAll() {
+        return sensorService.findAll();
+    }
+
     @PostMapping("/registration")
     public ResponseEntity<HttpStatus> registration(@RequestBody @Valid SensorDTO sensorDTO,
                              BindingResult bindingResult) {

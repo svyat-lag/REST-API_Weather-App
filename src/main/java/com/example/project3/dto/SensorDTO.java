@@ -4,6 +4,9 @@ public class SensorDTO {
 
     private String name;
 
+    public SensorDTO() {
+    }
+
     public String getName() {
         return name;
     }

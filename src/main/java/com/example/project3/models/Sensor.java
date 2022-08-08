@@ -1,15 +1,14 @@
 package com.example.project3.models;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "sensor")
-public class Sensor {
+public class Sensor implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +20,7 @@ public class Sensor {
     @Column(name = "name")
     private String name;
 
+//    @JsonBackReference
     @OneToMany(mappedBy = "sensor")
     private List<Measurement> measurements;
 
